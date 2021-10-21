@@ -1,0 +1,22 @@
+package designpattern.decorator.decorator;
+
+import designpattern.decorator.Beverage;
+
+public class Soy extends CondimentDecorator {
+
+    protected Beverage beverage;
+
+    public Soy(Beverage beverage) {
+        this.beverage = beverage;
+    }
+
+    @Override
+    public double cost() {
+        return 0.15 + beverage.cost();
+    }
+
+    @Override
+    public String getDescription() {
+        return beverage.getDescription() + ", Soy";
+    }
+}
